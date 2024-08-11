@@ -3,6 +3,8 @@ import { createRoot } from "react-dom/client";
 import { Menu, MenuOption } from "./Menu";
 import "./test.scss";
 import { Bubble } from "./Bubble";
+import { InfoModal } from "./InfoModal";
+import { UserInfo } from "./InfoModal";
 
 const options: MenuOption[] = [
   { name: "Nationality" },
@@ -61,6 +63,37 @@ const BubbleTest = () => {
   );
 };
 
+const userInfo: UserInfo = {
+  imageUrl:
+    "https://www.elle.vn/wp-content/uploads/2022/01/13/464763/ngang-jisoo-blackpink-mocah.jpg",
+  name: "Kim Chi Chu",
+  role: "Senior Software Engineer",
+  dateOfBirth: "1995-01-03",
+  nationality: "Vietnamese",
+  birthplace: "Quang Nam",
+  projects: ["ASML"],
+  email: "cuong.nguyen@sioux.eu",
+  phoneNumber: "0969087853",
+  clubs: ["Football", "Badminton"],
+  introduction: "Muốn đi nhanh thì đi một mình, muốn đi chậm thì đi cùng nhau.",
+};
+
+const ModalTest = () => {
+  const [open, setOpen] = useState<boolean>(false);
+  return (
+    <div>
+      <button onClick={() => setOpen(true)}>Open modal</button>
+      <InfoModal
+        userInfo={userInfo}
+        open={open}
+        onClose={() => setOpen(false)}
+      />
+    </div>
+  );
+};
+
+export default ModalTest;
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <div className="container">
@@ -69,6 +102,9 @@ createRoot(document.getElementById("root")!).render(
       </div>
       <div className="bubblesContainer">
         <BubbleTest />
+      </div>
+      <div className="modalContainerTest">
+        <ModalTest />
       </div>
     </div>
   </StrictMode>

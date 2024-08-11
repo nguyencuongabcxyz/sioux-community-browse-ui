@@ -1,0 +1,62 @@
+.sioux-cb-ui-modalContentInner {
+  position: relative;
+  padding-top: 20px;
+
+  .sioux-cb-ui-avatarContainer {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    position: absolute;
+    left: calc(50% - 55px);
+    top: -70px;
+
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover; /* or 'contain' depending on your needs */
+      border-radius: 50%;
+    }
+  }
+
+  .sioux-cb-ui-nameText {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .sioux-cb-ui-infoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .sioux-cb-ui-infoItem {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+
+      p {
+        margin: 0;
+      }
+
+      .sioux-cb-ui-infoLabel {
+        grid-column: span 2;
+        font-size: 14px;
+        color: #333333;
+        font-weight: bold;
+      }
+
+      .sioux-cb-ui-infoText {
+        grid-column: 3 / span 3;
+      }
+
+      .sioux-cb-ui-infoArray {
+        grid-column: 3 / span 3
+      }
+    }
+  }
+}
