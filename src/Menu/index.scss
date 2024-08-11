@@ -1,0 +1,79 @@
+.sioux-cb-ui-outerMenuContainer {
+
+  
+  .sioux-cb-ui-menuContainer {
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+    visibility: visible;
+
+    .sioux-cb-ui-instruction {
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-bottom: 8px;
+    }
+    
+    &.hidden {
+      transform: translateX(-300%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .sioux-cb-ui-menuOptionsContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+
+      .sioux-cb-ui-menuOption {
+        background-color: white;
+        font-weight: bold;
+        width: 180px;
+        font-size: 16px;
+        border-radius: 4px;
+        padding: 12px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+
+        &.selected {
+          background-color: #91F653;
+        }
+
+        &:hover {
+          background-color: #D2F4BC;
+          transition: background-color 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+
+  .sioux-cb-ui-triggerWrapper {
+    width: fit-content;
+    text-align: center;
+    position: relative;
+    left: 16px;
+
+    .sioux-cb-ui-trigger {
+      cursor: pointer;
+      display: block;
+      width: fit-content;
+      position: relative;
+  
+      svg {
+        &:hover {
+          transform: scale(0.95);
+          transition: transform 0.3s ease-in-out;
+        }
+      }
+    }
+  
+    .sioux-cb-ui-selectedText {
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-bottom: 8px;
+      margin-top: 8px;
+    }
+  }
+}
