@@ -1,0 +1,76 @@
+.sioux-cb-ui-bubble-outerContainer {
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out;
+  background: radial-gradient(circle, #FFFFFF, #A6C4E8 90%);
+  border-radius: 50%;
+
+  &.focused {
+    transform: scale(3);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 0 10px #C3D7EF;
+
+    .sioux-cb-ui-bubble-container {
+      transform: scale(0.7);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+}
+
+.sioux-cb-ui-bubble-container {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+
+  img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover; /* or 'contain' depending on your needs */
+    border-radius: 50%;
+  }
+  
+  .sioux-cb-ui-workAnniversaryYears {
+    position: absolute;
+    bottom: -5px;
+    height: 30px;
+  
+    .sioux-cb-ui-yearText {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: #B8ECBC;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #AF11EE;
+      top: 2px;
+      left: 6px;
+    }
+  }
+  
+  .sioux-cb-ui-birthday {
+    position: absolute;
+    bottom: -5px;
+    height: 30px;
+  }
+  
+  .sioux-cb-ui-sponsor {
+    position: absolute;
+    top: -20px;
+    height: 30px;
+  } 
+  
+  
+  
+}
+
