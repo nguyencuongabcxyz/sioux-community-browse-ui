@@ -1,6 +1,6 @@
 {
   "name": "sioux-community-browse-ui-v1",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "dist/my-react-ui-lib.umd.js",
   "module": "dist/my-react-ui-lib.es.js",
   "types": "dist/index.d.ts",
