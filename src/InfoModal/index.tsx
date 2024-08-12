@@ -1,4 +1,4 @@
-import { Modal } from "antd";
+import { Modal, Tag } from "antd";
 import { CrossIcon } from "../Menu/CrossIcon";
 import "./index.scss";
 
@@ -42,8 +42,10 @@ export const InfoModal = ({
   return (
     <div>
       <Modal
+        className="sioux-cb-ui-antModalContainer"
         open={open}
         onCancel={onClose}
+        centered
         footer={null}
         closeIcon={<CrossIcon />}
       >
@@ -71,7 +73,13 @@ export const InfoModal = ({
             </div>
             <div className="sioux-cb-ui-infoItem">
               <p className="sioux-cb-ui-infoLabel">Projects</p>
-              <div className="sioux-cb-ui-infoArray">{projects}</div>
+              <div className="sioux-cb-ui-infoArray">
+                {projects.map((project) => (
+                  <Tag key={project} color="#6CBAC7">
+                    {project}
+                  </Tag>
+                ))}
+              </div>
             </div>
             <div className="sioux-cb-ui-infoItem">
               <p className="sioux-cb-ui-infoLabel">Email</p>
@@ -83,7 +91,13 @@ export const InfoModal = ({
             </div>
             <div className="sioux-cb-ui-infoItem">
               <p className="sioux-cb-ui-infoLabel">Clubs</p>
-              <div className="sioux-cb-ui-infoArray">{clubs}</div>
+              <div className="sioux-cb-ui-infoArray">
+                {clubs.map((club) => (
+                  <Tag key={club} color="#6CBAC7" style={{ marginTop: "3px" }}>
+                    {club}
+                  </Tag>
+                ))}
+              </div>
             </div>
             <div className="sioux-cb-ui-infoItem">
               <p className="sioux-cb-ui-infoLabel">Introduction</p>

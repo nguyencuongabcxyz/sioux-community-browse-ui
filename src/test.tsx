@@ -71,10 +71,10 @@ const userInfo: UserInfo = {
   dateOfBirth: "1995-01-03",
   nationality: "Vietnamese",
   birthplace: "Quang Nam",
-  projects: ["ASML"],
+  projects: ["ASML", "Philips", "Sioux"],
   email: "cuong.nguyen@sioux.eu",
   phoneNumber: "0969087853",
-  clubs: ["Football", "Badminton"],
+  clubs: ["Football", "Badminton", "Swimming", "Gym"],
   introduction: "Muốn đi nhanh thì đi một mình, muốn đi chậm thì đi cùng nhau.",
 };
 
