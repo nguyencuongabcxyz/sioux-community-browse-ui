@@ -12,14 +12,14 @@ export interface MenuProps {
   selectedOption?: MenuOption | null;
   options: MenuOption[];
   onSelect: (option: MenuOption | null) => void;
-  total: number;
+  number: number;
 }
 
 export const Menu: React.FC<MenuProps> = ({
   options,
   onSelect,
   selectedOption,
-  total,
+  number,
 }: MenuProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -70,7 +70,9 @@ export const Menu: React.FC<MenuProps> = ({
           <MenuIcon active={menuOpen} />
         </a>
         <p className="sioux-cb-ui-selectedText">
-          {selectedOption ? selectedOption.name : `All (${total})`}
+          {selectedOption
+            ? `${selectedOption.name} (${number})`
+            : `All (${number})`}
         </p>
       </div>
     </div>

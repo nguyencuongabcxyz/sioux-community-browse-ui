@@ -24,7 +24,7 @@ const Test = () => {
   return (
     <div>
       <Menu
-        total={options.length}
+        number={options.length}
         options={options}
         selectedOption={selectedOption}
         onSelect={(option) => setSelectedOption(option)}
