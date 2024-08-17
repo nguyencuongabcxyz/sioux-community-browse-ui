@@ -7,15 +7,15 @@ import { InfoModal } from "./InfoModal";
 import { UserInfo } from "./InfoModal";
 
 const options: MenuOption[] = [
-  { name: "Nationality" },
-  { name: "Role" },
-  { name: "Birthplace" },
-  { name: "Year of birth" },
-  { name: "Month of birth" },
-  { name: "Project" },
-  { name: "Club" },
-  { name: "Gender" },
-  { name: "Joining year" },
+  { key: "nationality", name: "Nationality" },
+  { key: "role", name: "Role" },
+  { key: "birthplace", name: "Birthplace" },
+  { key: "yearOfBirth", name: "Year of birth" },
+  { key: "monthOfBirth", name: "Month of birth" },
+  { key: "project", name: "Project" },
+  { key: "club", name: "Club" },
+  { key: "gender", name: "Gender" },
+  { key: "joiningYear", name: "Joining year" },
 ];
 
 const Test = () => {
@@ -24,6 +24,7 @@ const Test = () => {
   return (
     <div>
       <Menu
+        total={options.length}
         options={options}
         selectedOption={selectedOption}
         onSelect={(option) => setSelectedOption(option)}
@@ -38,26 +39,27 @@ const BubbleTest = () => {
   return (
     <div className="bubblesContainerTest">
       <button onClick={() => setFocused(!focused)}>Focus</button>
+      <Bubble workAnniversaryYears={20} focused={focused} imageUrl={""} />
       <Bubble
         workAnniversaryYears={20}
         focused={focused}
-        imageUrl="https://images2.thanhnien.vn/528068263637045248/2024/3/12/js1-17102650444101039490703.jpeg"
+        imageUrl="https://www.shutterstock.com/image-vector/internship-rubber-grunge-stamp-seal-260nw-2435966171.jpg"
       />
       <Bubble
         type="workAnniversary"
         workAnniversaryYears={3}
         focused={focused}
-        imageUrl="https://www.elle.vn/wp-content/uploads/2022/01/13/464763/ngang-jisoo-blackpink-mocah.jpg"
+        imageUrl="https://play-lh.googleusercontent.com/vQfWclzVWBS9KSyvUIuHlAbngsHh5avAHMH45vkTz5_0WNstm0UzFuTRnw40mrm6-bAI=w600-h300-pc0xffffff-pd"
       />
       <Bubble
         type="birthday"
         focused={focused}
-        imageUrl="https://kenh14cdn.com/203336854389633024/2024/7/16/photo-1-17210918125271867201285.jpeg"
+        imageUrl="https://media.licdn.com/dms/image/v2/C560BAQGngyTu4N2xAQ/company-logo_200_200/company-logo_200_200/0/1631424867397/nearfield_instruments_bv_logo?e=2147483647&v=beta&t=gBypdjPqtUh1bmQ7xZOqd3EUp8jtGubHZ2aNZQfZxGg"
       />
       <Bubble
         type="sponsor"
         focused={focused}
-        imageUrl="https://vcdn1-giaitri.vnecdn.net/2024/06/26/Jisoo-tuan-thoi-trang-paris_1719370335.jpg?w=500&h=300&q=100&dpr=2&fit=crop&s=8EnRTalkmI8fn0vNIL6U5g"
+        imageUrl="https://upload.wikimedia.org/wikipedia/commons/2/20/SUSS_logo.jpg"
       />
     </div>
   );

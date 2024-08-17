@@ -4,6 +4,7 @@ import "./index.scss";
 import { CrossIcon } from "./CrossIcon";
 
 export interface MenuOption {
+  key: string;
   name: string;
 }
 
@@ -11,12 +12,14 @@ export interface MenuProps {
   selectedOption?: MenuOption | null;
   options: MenuOption[];
   onSelect: (option: MenuOption | null) => void;
+  total: number;
 }
 
 export const Menu: React.FC<MenuProps> = ({
   options,
   onSelect,
   selectedOption,
+  total,
 }: MenuProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -31,9 +34,9 @@ export const Menu: React.FC<MenuProps> = ({
         <div className="sioux-cb-ui-menuOptionsContainer">
           {options.map((option) => (
             <a
-              key={option.name}
+              key={option.key}
               className={`sioux-cb-ui-menuOption${
-                selectedOption?.name === option.name ? " selected" : ""
+                selectedOption?.key === option.key ? " selected" : ""
               }`}
               onClick={() => {
                 onSelect(option);
@@ -41,7 +44,7 @@ export const Menu: React.FC<MenuProps> = ({
               }}
             >
               {option.name}
-              {selectedOption?.name === option.name && (
+              {selectedOption?.key === option.key && (
                 <div
                   onClick={(e) => {
                     e.stopPropagation();
@@ -67,7 +70,7 @@ export const Menu: React.FC<MenuProps> = ({
           <MenuIcon active={menuOpen} />
         </a>
         <p className="sioux-cb-ui-selectedText">
-          {selectedOption ? selectedOption.name : "All"}
+          {selectedOption ? selectedOption.name : `All (${total})`}
         </p>
       </div>
     </div>
